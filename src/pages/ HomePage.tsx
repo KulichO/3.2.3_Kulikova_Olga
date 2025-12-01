@@ -52,7 +52,7 @@ export function HomePage() {
       .then((res) => res.json())
       .then((data) => dispatch({ type: "FETCH_SUCCESS", payload: data }))
       .catch(() => dispatch({ type: "FETCH_ERROR", payload: "Error" }));
-  });
+  }, []);
 
   function handleClickOpen(launch: Launch) {
     dispatch({ type: "OPEN_MODAL", payload: launch });
